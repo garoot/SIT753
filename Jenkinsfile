@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    toos{
+        git 'git'
+    }
 
     stages {
         stage('Build') {
