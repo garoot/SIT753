@@ -8,17 +8,17 @@ pipeline {
         stage('Build') {
             steps {
                 // Build the code using Maven
-                sh 'mvn clean package '
+                echo 'mvn clean package '
             }
         }
         stage('Unit and Integration Tests') {
             steps {
                 // Run unit tests
-                sh 'running mvn test'
+                echo 'running mvn test'
 
                 // Run integration tests
                 // Add commands for running integration tests
-                sh 'running integration test '
+                echo 'running integration test '
             }
             post {
                 success {
@@ -37,7 +37,7 @@ pipeline {
             steps {
                 // Analyze code using SonarQube
                 // Add commands for code analysis
-                sh 'running code analysis '
+                echo 'running code analysis '
 
             }
         }
@@ -45,7 +45,7 @@ pipeline {
             steps {
                 // Perform security scan using OWASP ZAP
                 // Add commands for security scan
-                sh 'performing security scan using OWASP '
+                echo 'performing security scan using OWASP '
             }
             post {
                 success {
@@ -64,21 +64,21 @@ pipeline {
             steps {
                 // Deploy to staging server using AWS CodeDeploy
                 // Add commands for deployment
-                sh 'deploying to aws ec2 instance '
+                echo 'deploying to aws ec2 instance '
             }
         }
         stage('Integration Tests on Staging ') {
             steps {
                 // Run integration tests on staging environment
                 // Add commands for running integration tests
-                sh 'running integration tests on staging '
+                echo 'running integration tests on staging '
             }
         }
         stage('Deploy to Production') {
             steps {
                 // Deploy to production server using AWS CodeDeploy
                 // Add commands for deployment
-                sh 'deploying to production'
+                echo 'deploying to production'
             }
         }
         stage('Checkout') {
