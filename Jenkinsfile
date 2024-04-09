@@ -61,7 +61,7 @@ pipeline {
             steps {
                 // Deploy to staging server using AWS CodeDeploy
                 // Add commands for deployment
-                sh 'deploying to aws ec2 instance '
+                sh 'deploying to aws ec2 instance'
             }
         }
         stage('Integration Tests on Staging ') {
