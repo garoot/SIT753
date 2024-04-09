@@ -11,10 +11,11 @@ pipeline {
         stage('Unit and Integration Tests') {
             steps {
                 // Run unit tests
-                sh 'mvn test'
+                sh 'running mvn test'
 
                 // Run integration tests
                 // Add commands for running integration tests
+                sh 'running integration test '
             }
             post {
                 success {
@@ -33,12 +34,15 @@ pipeline {
             steps {
                 // Analyze code using SonarQube
                 // Add commands for code analysis
+                sh 'running code analysis '
+
             }
         }
         stage('Security Scan') {
             steps {
                 // Perform security scan using OWASP ZAP
                 // Add commands for security scan
+                sh 'performing security scan using OWASP '
             }
             post {
                 success {
@@ -57,18 +61,21 @@ pipeline {
             steps {
                 // Deploy to staging server using AWS CodeDeploy
                 // Add commands for deployment
+                sh 'deploying to aws ec2 instance '
             }
         }
         stage('Integration Tests on Staging') {
             steps {
                 // Run integration tests on staging environment
                 // Add commands for running integration tests
+                sh 'running integration tests on staging '
             }
         }
         stage('Deploy to Production') {
             steps {
                 // Deploy to production server using AWS CodeDeploy
                 // Add commands for deployment
+                sh 'deploying to production '
             }
         }
     }
