@@ -64,7 +64,7 @@ pipeline {
                 sh 'deploying to aws ec2 instance '
             }
         }
-        stage('Integration Tests on Staging') {
+        stage('Integration Tests on Staging ') {
             steps {
                 // Run integration tests on staging environment
                 // Add commands for running integration tests
