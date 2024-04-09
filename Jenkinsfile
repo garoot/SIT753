@@ -78,5 +78,10 @@ pipeline {
                 sh 'deploying to production '
             }
         }
+        stage('Checkout') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/garoot/SIT753']]])
+            }
+        }
     }
 }
