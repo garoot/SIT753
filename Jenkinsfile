@@ -78,7 +78,7 @@ pipeline {
             steps {
                 // Deploy to production server using AWS CodeDeploy
                 // Add commands for deployment
-                sh 'deploying to production '
+                sh 'deploying to production'
             }
         }
         stage('Checkout') {
