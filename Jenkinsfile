@@ -1,8 +1,8 @@
 pipeline {
     agent any
-    // tools{
-    //     git 'git'
-    // }
+    tools{
+        git 'git'
+    }
 
     stages {
         stage('Build') {
@@ -81,16 +81,16 @@ pipeline {
                 echo 'deploying to production'
             }
         }
-        // stage('Checkout') {
-        //     steps {
-        //         checkout([$class: 'GitSCM',
-        //                 branches: [[name: '*/main']],
-        //                 doGenerateSubmoduleConfigurations: false,
-        //                 extensions: [],
-        //                 submoduleCfg: [],
-        //                 userRemoteConfigs: [[url: 'https://github.com/garoot/SIT753']],
-        //                 gitTool: 'git'])
-        //     }
-        // }
+        stage('Checkout') {
+            steps {
+                checkout([$class: 'GitSCM',
+                        branches: [[name: '*/main']],
+                        doGenerateSubmoduleConfigurations: false,
+                        extensions: [],
+                        submoduleCfg: [],
+                        userRemoteConfigs: [[url: 'https://github.com/garoot/SIT753']],
+                        gitTool: 'git'])
+            }
+        }
     }
 }
