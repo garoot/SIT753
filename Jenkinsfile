@@ -51,7 +51,7 @@ pipeline {
                 success {
                     emailext subject: "Security Scan - Success",
                               body: "The security scan passed successfully.",
-                              to: "majeed.garoot@gmail.com"
+                              to: "abdulmajeedgaroot@gmail.com"
                 }
                 failure {
                     emailext subject: "Security Scan - Failure",
