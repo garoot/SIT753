@@ -1,8 +1,6 @@
 pipeline {
     agent any
-    environment {
-        GIT_PATH = "C:\\Program Files\\Git\\cmd\\git.exe" 
-    }
+
 
     stages {
         stage('Build') {
@@ -81,17 +79,5 @@ pipeline {
                 echo 'deploying to production'
             }
         }
-        stage('Checkout') {
-            steps {
-                checkout([$class: 'GitSCM',
-                        branches: [[name: '*/main']],
-                        doGenerateSubmoduleConfigurations: false,
-                        extensions: [[$class: 'CloneOption', noTags: false, shallow: false, depth: 0, reference: '', quiet: true]],
-                        submoduleCfg: [],
-                        userRemoteConfigs: [[url: 'https://github.com/garoot/SIT753']],
-                        gitTool: 'git'])
-            }
-        }
-
     }
 }
