@@ -21,14 +21,16 @@ pipeline {
                 echo 'running integration test '
             }
             post {
-                always {
-                    emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+                success {
+                    emailext subject: "Unit and Integration Tests - Success",
+                              body: "The unit and integration tests passed successfully.",
+                              to: "majeed.garoot@gmail.com"
                 }
-                // failure {
-                //     emailext subject: "Unit and Integration Tests - Failure",
-                //               body: "The unit and integration tests failed. Please check the logs for details.",
-                //               to: "majeed.garoot@gmail.com"
-                // }
+                failure {
+                    emailext subject: "Unit and Integration Tests - Failure",
+                              body: "The unit and integration tests failed. Please check the logs for details.",
+                              to: "majeed.garoot@gmail.com"
+                }
             }
         }
         stage('Code Analysis') {
