@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    environment {
-        GIT_PATH = "C:\\Program Files\\Git\\cmd\\git.exe" 
-    }
 
     stages {
         stage('Build') {
