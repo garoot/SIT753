@@ -81,13 +81,5 @@ pipeline {
                 echo 'deploying to production'
             }
         }
-        stage('Checkout') {
-            steps {
-                checkout scmGit(
-                    branches: [[name: 'master']],
-                    userRemoteConfigs: [[url: 'https://github.com/jenkinsci/git-plugin.git']])
-            }
-        }
-
     }
 }
