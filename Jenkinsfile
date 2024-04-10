@@ -14,7 +14,7 @@ pipeline {
         stage('Unit and Integration Tests ') {
             steps {
                 // Run unit tests
-                echo 'running mvn test'
+                echo 'running mvn test '
 
                 // Run integration tests
                 // Add commands for running integration tests
