@@ -21,7 +21,7 @@ pipeline {
                 echo 'running integration test '
             }
             post {
-                success {
+                always {
                     emailext subject: "Unit and Integration Tests - Success",
                               body: "The unit and integration tests passed successfully.",
                               to: "majeed.garoot@gmail.com"
