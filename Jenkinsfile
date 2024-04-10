@@ -8,7 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Build the code using Maven
-                echo 'mvn clean package'
+                echo 'mvn clean package '
             }
         }
         stage('Unit and Integration Tests') {
