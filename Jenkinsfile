@@ -23,13 +23,13 @@ pipeline {
             post {
                 success {
                     emailext subject: "Unit and Integration Tests - Success",
-                              body: "The unit and integration tests passed successfully.",
-                              to: "majeed.garoot@gmail.com"
+                            body: "The unit and integration tests passed successfully.",
+                            to: "majeed.garoot@gmail.com"
                 }
                 failure {
                     emailext subject: "Unit and Integration Tests - Failure",
-                              body: "The unit and integration tests failed. Please check the logs for details.",
-                              to: "majeed.garoot@gmail.com"
+                            body: "The unit and integration tests failed. Please check the logs for details.",
+                            to: "majeed.garoot@gmail.com"
                 }
             }
         }
@@ -50,13 +50,13 @@ pipeline {
             post {
                 success {
                     emailext subject: "Security Scan - Success",
-                              body: "The security scan passed successfully.",
-                              to: "abdulmajeedgaroot@gmail.com"
+                            body: "The security scan passed successfully.",
+                            to: "abdulmajeedgaroot@gmail.com"
                 }
                 failure {
                     emailext subject: "Security Scan - Failure",
-                              body: "The security scan failed. Please check the logs for details.",
-                              to: "majeed.garoot@gmail.com"
+                            body: "The security scan failed. Please check the logs for details.",
+                            to: "majeed.garoot@gmail.com"
                 }
             }
         }
@@ -81,16 +81,16 @@ pipeline {
                 echo 'deploying to production'
             }
         }
-        stage('Checkout') {
-            steps {
-                checkout([$class: 'GitSCM',
-                          branches: [[name: '*/main']],
-                          doGenerateSubmoduleConfigurations: false,
-                          extensions: [],
-                          submoduleCfg: [],
-                          userRemoteConfigs: [[url: 'https://github.com/garoot/SIT753']],
-                          gitTool: 'git'])
-            }
-        }
+        // stage('Checkout') {
+        //     steps {
+        //         checkout([$class: 'GitSCM',
+        //                 branches: [[name: '*/main']],
+        //                 doGenerateSubmoduleConfigurations: false,
+        //                 extensions: [],
+        //                 submoduleCfg: [],
+        //                 userRemoteConfigs: [[url: 'https://github.com/garoot/SIT753']],
+        //                 gitTool: 'git'])
+        //     }
+        // }
     }
 }
