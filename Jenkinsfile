@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    environment {
+        GIT_PATH = "C:\\Program Files\\Git\\cmd\\git.exe" 
+    }
 
     stages {
         stage('Build') {
@@ -79,5 +81,13 @@ pipeline {
                 echo 'deploying to production'
             }
         }
+        stage('Checkout') {
+            steps {
+                checkout scmGit(
+                    branches: [[name: 'master']],
+                    userRemoteConfigs: [[url: 'https://github.com/jenkinsci/git-plugin.git']])
+            }
+        }
+
     }
 }
