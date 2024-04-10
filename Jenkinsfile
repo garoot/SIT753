@@ -81,21 +81,5 @@ pipeline {
                 echo 'deploying to production'
             }
         }
-        stage('Checkout') {
-            steps {
-                script {
-                    def gitTool = tool name: 'git', type: 'hudson.plugins.git.GitTool'
-                    gitTool = 'git' 
-                    env.PATH = "${env.GIT_PATH};${env.PATH}"
-                    checkout([$class: 'GitSCM',
-                            branches: [[name: '*/main']],
-                            doGenerateSubmoduleConfigurations: false,
-                            extensions: [],
-                            submoduleCfg: [],
-                            userRemoteConfigs: [[url: 'https://github.com/garoot/SIT753']],
-                            gitTool: gitTool])
-                }
-            }
-        }
     }
 }
