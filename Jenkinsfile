@@ -74,7 +74,7 @@ pipeline {
                 echo 'running integration tests on staging '
             }
         }
-        stage('Deploy to Production') {
+        stage('Deploy to Production ') {
             steps {
                 // Deploy to production server using AWS CodeDeploy
                 // Add commands for deployment
