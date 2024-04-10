@@ -11,7 +11,7 @@ pipeline {
                 echo 'mvn clean package'
             }
         }
-        stage('Unit and Integration Tests') {
+        stage('Unit and Integration Tests ') {
             steps {
                 // Run unit tests
                 echo 'running mvn test'
