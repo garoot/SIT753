@@ -45,7 +45,7 @@ pipeline {
             steps {
                 // Perform security scan using OWASP ZAP
                 // Add commands for security scan
-                echo 'performing security scan using OWASP '
+                echo 'performing security scan using OWASP and Notify via E-mail '
             }
             post {
                 success {
