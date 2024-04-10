@@ -41,7 +41,7 @@ pipeline {
 
             }
         }
-        stage('Security Scan') {
+        stage('Security Scan ') {
             steps {
                 // Perform security scan using OWASP ZAP
                 // Add commands for security scan
