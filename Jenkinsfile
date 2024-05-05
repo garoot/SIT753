@@ -22,7 +22,7 @@ pipeline {
                     emailext subject: "Unit and Integration Tests - Success",
                             body: "The unit and integration tests passed successfully.",
                             to: "abdulmajeedgaroot@gmail.com",
-                            attachLog: true
+                            attachLog: true 
                 }
                 failure {
                     emailext subject: "Unit and Integration Tests - Failure",
