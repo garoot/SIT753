@@ -21,12 +21,14 @@ pipeline {
                 success {
                     emailext subject: "Unit and Integration Tests - Success",
                             body: "The unit and integration tests passed successfully.",
-                            to: "abdulmajeedgaroot@gmail.com"
+                            to: "abdulmajeedgaroot@gmail.com",
+                            attachLog: true
                 }
                 failure {
                     emailext subject: "Unit and Integration Tests - Failure",
                             body: "The unit and integration tests failed. Please check the logs for details.",
-                            to: "abdulmajeedgaroot@gmail.com"
+                            to: "abdulmajeedgaroot@gmail.com",
+                            attachLog: true
                 }
             }
         }
@@ -48,12 +50,14 @@ pipeline {
                 success {
                     emailext subject: "Security Scan - Success",
                             body: "The security scan passed successfully.",
-                            to: "abdulmajeedgaroot@gmail.com"
+                            to: "abdulmajeedgaroot@gmail.com",
+                            attachLog: true
                 }
                 failure {
                     emailext subject: "Security Scan - Failure",
                             body: "The security scan failed. Please check the logs for details.",
-                            to: "abdulmajeedgaroot@gmail.com"
+                            to: "abdulmajeedgaroot@gmail.com",
+                            attachLog: true
                 }
             }
         }
