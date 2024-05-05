@@ -28,7 +28,7 @@ pipeline {
                     emailext subject: "Unit and Integration Tests - Failure",
                             body: "The unit and integration tests failed. Please check the logs for details.",
                             to: "abdulmajeedgaroot@gmail.com",
-                            attachLog: true,
+                            attachLog: true
 
                 }
             }
